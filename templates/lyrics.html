@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ track_name }} - {{ artist_name }}</title>
+</head>
+<body>
+  <h1>{{ track_name }} - {{ artist_name }}</h1>
+  {% if lyrics != 'Lyrics not found' %}
+    <pre>{{ lyrics }}</pre>
+  {% else %}
+    <p>{{ lyrics }}</p>
+  {% endif %}
+</body>
+</html>

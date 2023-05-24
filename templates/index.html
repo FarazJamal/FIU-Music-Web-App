@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FIU Music</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="../static/img/favicon.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="../static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../static/lib/animate/animate.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="../static/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: Regna
+    Theme URL: https://bootstrapmade.com/regna-bootstrap-onepage-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+
+  <!--==========================
+  Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <a href="https://fiu.edu"><img src="../static/img/fiu.png" alt="" title=""style=" width:100px;height:45px;" /></a>
+
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#"></a>Home</li>
+          <li><a href="https://canvas.fiu.edu">Canvas</a></li>
+          <li><a href="https://www.gregoryreis.com">Professor</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <section id="hero">
+    <div class="hero-container">
+      <h1>Welcome to the FIU Music Web App</h1>
+      <h2 >Discover new music and artists!</h2>
+      <div>
+        <form method='POST' action="/results">
+          <label for="country">Select Country:</label>
+          <select id="country" name="country">
+            {% for country in form.country.choices %}
+              <option value="{{ country }}">{{ country }}</option>
+            {% endfor %}
+          </select>
+          
+          <br>
+          <label for="chartType">Select Chart Type:</label>
+          <select id="chartType" name="chartType">
+            {% for chart in form.chart_type.choices %}
+            <option value="{{ chart[0] }}">{{ chart[1] }}</option>
+            {% endfor %}
+          </select><br>
+        
+          <label for="numberResults">Number of Results:</label>
+          <select id="numberResults" name="numberResults">
+            {% for i in range(1, 11) %}
+              <option value="{{ i }}">{{ i }}</option>
+            {% endfor %}
+          </select><br>
+          <input type="submit" class="btn-get-started" value="Submit">
+        </form>
+      </div>
+      <br>
+
+
+    </div>
+  </section>
+
+  <main id="main">
+
+
+    <section id="portfolio">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h3 class="section-title">Discover New Music and Artists</h3>
+            <p class="section-description">Using the Musixmatch Developer API, we will provide the top artists and tracks per country.</p>
+
+        </div>
+      </div>
+  </section>
+
+
+
+
+
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>FIU Music App</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+
+        Designed by Gregory Murad Reis using <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="../static/lib/jquery/jquery.min.js"></script>
+  <script src="../static/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="../static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/lib/easing/easing.min.js"></script>
+  <script src="../static/lib/wow/wow.min.js"></script>
+  <script src="../static/lib/waypoints/waypoints.min.js"></script>
+  <script src="../static/lib/counterup/counterup.min.js"></script>
+  <script src="../static/lib/superfish/hoverIntent.js"></script>
+  <script src="../static/lib/superfish/superfish.min.js"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="../static/contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="../static/js/main.js"></script>
+
+</body>
+</html>

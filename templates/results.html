@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FIU Music</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="../static/img/favicon.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="../static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../static/lib/animate/animate.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="../static/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: Regna
+    Theme URL: https://bootstrapmade.com/regna-bootstrap-onepage-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+
+
+
+
+      <style>
+        .styled-table {
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+          margin-bottom: 40px;
+        }
+        
+        .styled-table td, .styled-table th {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: justify;
+        }
+        
+        .styled-table tr:nth-child(even){
+          background-color: #f2f2f2;
+          color: black;
+        }
+        
+        
+        .styled-table th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #04AA6D;
+          color: white;
+        }
+        
+
+
+        ul {
+          list-style: none;
+          padding: 0;
+        }
+ 
+        li {
+          margin-bottom: 40px;
+        }
+
+        .table-container {
+          max-height: 500px;
+          overflow-y: auto;
+        }
+
+        #hero {
+            padding-top: 80px;
+            padding-bottom: 50px;
+          }
+
+
+          #footer {
+
+            width: 100%;
+            margin-top: 600px;
+          }
+
+
+/* 
+          #hero {
+          width: 100%;
+          height: 100vh;
+          background: url(../img/hero-bg.jpg) top center;
+          background-size: cover;
+          position: relative;
+        }
+ */
+
+</style>
+    
+
+</head>
+
+<body>
+
+  <!--==========================
+  Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <a href="https://fiu.edu"><img src="../static/img/fiu.png" alt="" title=""style=" width:100px;height:45px;" /></a>
+
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#"></a>Home</li>
+          <li><a href="https://canvas.fiu.edu">Canvas</a></li>
+          <li><a href="https://www.gregoryreis.com">Professor</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+<section id="hero">
+    <div class="hero-container">
+
+      
+
+
+      <div class="row" style="column-gap: 80px; margin-top: 700px; ">
+        <div class="column">
+          <h3>Top {{ quantity }} Artists </h3>
+           <h3> in {{ country }}:</h3>
+
+           {% if list_of_artists %}
+           <h2>Top Artists for {{ country }}</h2>
+           <ul>
+             {% for artist in list_of_artists %}
+               <li>{{ artist }}</li>
+             {% endfor %}
+           </ul>
+         {% endif %}
+
+        </div>
+        <div class="column">
+         <h3>Top {{ quantity }} Tracks </h3>
+           <h3> in {{ country }}:</h3>
+
+
+          <table class="styled-table">
+
+
+          {% if list_of_tracks %}
+            <h2>Top Tracks for {{ country }}  {{ chart_type }}</h2>
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Track Name</th>
+                  <th>Artist Name</th>
+                  <th>Lyrics</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                {% for track in list_of_tracks %}
+                  <tr>
+                    <td>{{ track['track_name'] }}</td>
+                    <td>{{ track['artist_name'] }}</td>
+                    <td><a href="{{ track.track_share_url }}">Lyrics</a></td>
+                  </tr>
+                {% endfor %}
+
+                
+
+              </tbody>
+            </table>
+          {% endif %}
+
+        </table>
+
+        </div>
+        
+
+      </div>
+      
+      <div>
+        
+        <a class="btn-get-started" style="top: -100px;  position: absolutes;"; href="{{ url_for('index') }}">Return</a>
+        <h1 style="color: black; margin-top: 150px;">Welcome to the FIU Music Web App</h1>
+        <h2>Discover new music and artists!</h2>
+      </div>
+      <br>
+
+
+    </div>
+  </section><!-- #hero -->
+
+
+  <main id="main">
+
+
+
+
+
+
+
+  </main>
+
+  
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>FIU Music App</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+
+        Designed by Gregory Murad Reis using <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="../static/lib/jquery/jquery.min.js"></script>
+  <script src="../static/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="../static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/lib/easing/easing.min.js"></script>
+  <script src="../static/lib/wow/wow.min.js"></script>
+  <script src="../static/lib/waypoints/waypoints.min.js"></script>
+  <script src="../static/lib/counterup/counterup.min.js"></script>
+  <script src="../static/lib/superfish/hoverIntent.js"></script>
+  <script src="../static/lib/superfish/superfish.min.js"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="../static/contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="../static/js/main.js"></script>
+
+</body>
+</html>
